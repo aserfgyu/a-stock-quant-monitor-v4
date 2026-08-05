@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: a-stock-quant-monitor-v4
+    runtime: docker
+    plan: free
+    dockerfilePath: ./Dockerfile
+    envVars:
+      - key: HOST
+        value: 0.0.0.0
+      - key: PORT
+        value: 10000
+      - key: UPDATE_INTERVAL
+        value: 30
+      - key: DEBUG
+        value: false
+    healthCheckPath: /api/data
+    autoDeploy: true

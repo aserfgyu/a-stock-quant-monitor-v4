@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    ports:
+      - "10000:10000"
+    environment:
+      - HOST=0.0.0.0
+      - PORT=10000
+      - UPDATE_INTERVAL=30
+      - DEBUG=false
+    restart: unless-stopped
